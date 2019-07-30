@@ -45,11 +45,11 @@ include_directories(${SOURCE_DIR})
 # target crypto
 xpackage_glob_src(CRYPTO_SRCS ${SOURCE_DIR}/crypto/*.c  EXLUDES)
 
-xpackage_build_target(crypto ${BUILD_ROOT} CRYPTO_SRCS EXPORT_INCS)
+xpackage_build_target(crypto ${BUILD_ROOT} CRYPTO_SRCS EXPORT_INCS "")
 
 # target ssl
 xpackage_glob_src(SSL_SRCS ${SOURCE_DIR}/ssl/*.c  EXLUDES)
 
-xpackage_build_target(ssl ${BUILD_ROOT} SSL_SRCS EXPORT_INCS)
+xpackage_build_target(ssl ${BUILD_ROOT} SSL_SRCS EXPORT_INCS "")
 
 

@@ -25,5 +25,5 @@ set(EXPORT_INCS "${SOURCE_DIR}")
 
 xpackage_glob_src(SRCS ${SOURCE_DIR}/*.c  EXLUDES)
 
-xpackage_build_target(${PACKAGE_NAME} ${BUILD_ROOT} SRCS EXPORT_INCS)
+xpackage_build_target(${PACKAGE_NAME} ${BUILD_ROOT} SRCS EXPORT_INCS "")
 

@@ -30,12 +30,14 @@ xpackage_init(${PACKAGE_NAME} ${PACKAGE_VERSION} ${PACKAGE_URL} "${FLAGS}" SRC_R
 set(SOURCE_DIR "${SRC_ROOT}/${DIR_NAME}")
 set(EXPORT_INCS "${SOURCE_DIR}/include")
 
+set(EXPORT_DEFS "-DCURL_STATICLIB")
+
 include_directories("${SOURCE_DIR}/lib")
 
 
 xpackage_glob_src(SRCS ${SOURCE_DIR}/lib/*.c  EXLUDES)
 
-xpackage_build_target(${PACKAGE_NAME} ${BUILD_ROOT} SRCS EXPORT_INCS)
+xpackage_build_target(${PACKAGE_NAME} ${BUILD_ROOT} SRCS EXPORT_INCS EXPORT_DEFS)
 
 
 

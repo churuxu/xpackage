@@ -104,9 +104,12 @@ endmacro()
 
 
 #export find info
-macro(xpackage_export target_name build_dir includes)
+macro(xpackage_export target_name build_dir includes defs)
 	set(export_info_ "")
-	set(export_info_ "${export_info_}link_directories(${build_dir})\n")	
+	set(export_info_ "${export_info_}link_directories(${build_dir})\n")
+	foreach(def_ IN LISTS ${defs})
+		set(export_info_ "${export_info_}add_definitions(${def_})\n")
+	endforeach()	
 	foreach(dir_ IN LISTS ${includes})
 		set(export_info_ "${export_info_}include_directories(${dir_})\n")
 	endforeach()
@@ -121,7 +124,7 @@ endmacro()
 
 
 #build lib
-macro(xpackage_build_target target_name build_dir srcs includes)
+macro(xpackage_build_target target_name build_dir srcs includes defs)
 	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${build_dir})
 	set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${build_dir})
 	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${build_dir})
@@ -142,7 +145,7 @@ macro(xpackage_build_target target_name build_dir srcs includes)
 			endforeach()			
 			add_library(${target_name} ${srcs_})
 		endif()
-		xpackage_export(${target_name} ${build_dir} ${includes})
+		xpackage_export(${target_name} ${build_dir} "${includes}" "${defs}")
 	endif()	
 endmacro()
 
