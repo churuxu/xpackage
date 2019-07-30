@@ -1,19 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-### cmake template for build package with remote source ### 
-
 include(${CMAKE_CURRENT_LIST_DIR}/../xpackage.cmake)
-
-set(A a b)
-
-
-macro(showlist l)
-	foreach(v IN LISTS ${l})
-		message(${v})
-	endforeach()
-endmacro()
-
-showlist(${A})
 
 
 set(PACKAGE_NAME zlib)
@@ -31,13 +18,13 @@ set(EXLUDES ".*contrib/.*" ".*examples/.*" ".*test/.*")
 
 #include_directories(...)
 
-xpackage_init(${PACKAGE_NAME} ${PACKAGE_VERSION} ${PACKAGE_URL} SRC_ROOT BUILD_ROOT)
+xpackage_init(${PACKAGE_NAME} ${PACKAGE_VERSION} ${PACKAGE_URL} "${FLAGS}" SRC_ROOT BUILD_ROOT)
 
 set(EXPORT_INCS "${SRC_ROOT}/${SRC_DIR}")
 
 xpackage_glob_src(SRCS ${SRC_ROOT}/${SRC_DIR}/*.c  EXLUDES)
 
-xpackage_build_target(z ${BUILD_ROOT} "${SRCS}" EXPORT_INCS)
+xpackage_build_target(z ${BUILD_ROOT} SRCS EXPORT_INCS)
 
 
 
