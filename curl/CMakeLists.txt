@@ -18,7 +18,7 @@ set(EXLUDES )
 
 
 # add openssl depends
-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../openssl ${CMAKE_BINARY_DIR}/openssl)
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../openssl ${CMAKE_BINARY_DIR}/dep/openssl)
 set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
 find_package(ssl)
 find_package(crypto)

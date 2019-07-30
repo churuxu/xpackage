@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.10)
+
 #for build all packages
 
 file(GLOB_RECURSE SUB_CMAKES */CMakeLists.txt)
