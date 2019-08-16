@@ -11,7 +11,7 @@ set(SRC_DIR STM32Cube_FW_F1_V1.7.0)
 
 set(PACKAGE_URL http://sw-center.st.com/packs/resource/firmware/stm32cube_fw_f1_v${PACKAGE_VERSION}.zip)
 
-set(FLAGS "-DUSE_HAL_DRIVER -DSTM32F103xE -mcpu=cortex-m3")
+set(FLAGS "${CFLAGS}")
 
 set(EXCLUDES ".*_ll_.*" ".*Legacy/.*")
 
@@ -31,8 +31,9 @@ set(EXPORT_INCS ${HAL_DRIVER_DIR}/Inc ${CMSIS_ST_DIR}/Include ${CMSIS_DIR}/Inclu
 
 include_directories(${EXPORT_INCS})
 
-
 xpackage_glob_src(SRCS ${HAL_DRIVER_DIR}/Src/*.c  EXCLUDES)
+
+list(APPEND SRCS ${CMSIS_ST_DIR}/Source/Templates/system_stm32f1xx.c)
 
 xpackage_build_target(${PACKAGE_NAME} ${BUILD_ROOT} SRCS EXPORT_INCS "")
 
