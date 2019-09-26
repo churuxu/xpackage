@@ -14,14 +14,17 @@ set(PACKAGE_URL https://github.com/ARMmbed/littlefs/archive/v${PACKAGE_VERSION}.
 list(APPEND EXCLUDES ".*/emubd/.*")
 list(APPEND EXCLUDES ".*/scripts/.*")
 list(APPEND EXCLUDES ".*/tests/.*")
-list(APPEND EXCLUDES ".*/lfs_util.c")
+
 
 if(NOT ${PACKAGE_NAME} IN_LIST LIBS)
 	return()
 endif()
 
-
-set(FLAGS "")
+if("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+	set(FLAGS "")
+else()
+	set(FLAGS "-DLFS_NO_DEBUG -DLFS_NO_WARN -DLFS_NO_ERROR -DLFS_NO_ERROR -DLFS_NO_ASSERT")
+endif()
 
 xpackage_init(${PACKAGE_NAME} ${PACKAGE_VERSION} ${PACKAGE_URL} "${FLAGS}" SRC_ROOT BUILD_ROOT)
 
