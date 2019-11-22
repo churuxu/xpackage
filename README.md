@@ -1,5 +1,28 @@
 # xpackage
-cmake package manage tool for c/c++
+C/C++开源包管理工具(基于CMake)
+
+## 主要解决问题
+
+- 每次加开源库到自己工程里，建工程改配置麻烦
+
+- 每次编译工程会重复编译大量开源库代码
+
+## 用法
+
+1. clone这个库
+2. 拷贝xpackage.cmake和用到的包目录到你自己的工程目录
+3. 在你自己的工程CMakeLists.txt中引用包目录下CMakeLists.txt
+4. 在你自己的工程CMakeLists.txt中定义LIBS变量，值为依赖的包名称列表
+5. 在你自己的工程CMakeLists.txt设置编译目标依赖LIBS列表里的每一个包
+6. 再使用你自己的工程CMakeLists.txt编译
+
+## 基本原理
+
+每一个包首次编译会下载源码到本地，不同编译环境选项，编译出的库文件会缓存到不同目录。
+
+之后再使用包，如果本地已存在同样编译选项的该库文件，则直接使用，不存在则编译。
+
+
 
 
 
