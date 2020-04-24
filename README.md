@@ -7,14 +7,9 @@ C/C++开源包管理工具(基于CMake)
 
 - 每次编译工程会重复编译大量开源库代码
 
-## 用法
+## 用法示例
 
-1. clone这个库
-2. 拷贝xpackage.cmake和用到的包目录到你自己的工程目录
-3. 在你自己的工程CMakeLists.txt中引用包目录下CMakeLists.txt
-4. 在你自己的工程CMakeLists.txt中定义LIBS变量，值为依赖的包名称列表
-5. 在你自己的工程CMakeLists.txt设置编译目标依赖LIBS列表里的每一个包
-6. 再使用你自己的工程CMakeLists.txt编译
+- 参考example目录
 
 ## 基本原理
 
