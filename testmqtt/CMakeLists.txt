@@ -4,7 +4,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
 set(USE_OPENSSL 1)
 
-add_executable(testmqtt main.c)
+file(GLOB_RECURSE ALL_SRCS *.c *.cpp)
+list(FILTER ALL_SRCS EXCLUDE REGEX "CMakeFiles")
+
+
+add_executable(testmqtt ${ALL_SRCS})
 
 include(xpackage.cmake)
 xpackage_depends(testmqtt pahomqtt)
