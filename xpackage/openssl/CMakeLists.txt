@@ -5,10 +5,10 @@ include(${CMAKE_CURRENT_LIST_DIR}/../xpackage.cmake)
 
 set(XPACKAGE_NAME openssl)
 set(XPACKAGE_VERSION 1.1.1c)
-set(XPACKAGE_URL https://www.openssl.org/source/openssl-1.1.1c.tar.gz)
-set(XPACKAGE_HASH SHA256=F6FB3079AD15076154EDA9413FED42877D668E7069D9B87396D0804FDB3F4C90)
+set(XPACKAGE_URL https://github.com/openssl/openssl/archive/OpenSSL_1_1_1c.zip)
+set(XPACKAGE_HASH SHA256=69aa9565216d1d69212af786a08e3673926af3b494d5ec31b1b2958822caaa9c)
 
-set(XPACKAGE_SOURCE_DIR openssl-${XPACKAGE_VERSION})
+set(XPACKAGE_SOURCE_DIR openssl-OpenSSL_1_1_1c)
 
 list(APPEND EXLUDES ".*asm/.*")
 list(APPEND EXLUDES ".*LPdir.*")
