@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.10)
 include(${CMAKE_CURRENT_LIST_DIR}/../xpackage.cmake)
 
 set(XPACKAGE_NAME curl)
-set(XPACKAGE_VERSION 7.65.1)
-set(XPACKAGE_URL https://www.openssl.org/source/openssl-1.1.1c.tar.gz)
-set(XPACKAGE_HASH SHA256=821AEB78421375F70E55381C9AD2474BF279FC454B791B7E95FC83562951C690)
+set(XPACKAGE_VERSION 7.69.1)
+set(XPACKAGE_URL https://github.com/curl/curl/releases/download/curl-7_69_1/curl-7.69.1.zip)
+set(XPACKAGE_HASH SHA256=61fc1759b533e49cb7a499e78967ee536c93ad7ecb43fa7106568dc875c2cca4)
 
 set(XPACKAGE_SOURCE_BASE curl-${XPACKAGE_VERSION})
 set(XPACKAGE_SOURCE_DIR ${XPACKAGE_SOURCE_BASE}/lib)

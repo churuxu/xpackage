@@ -1,3 +1,0 @@
-E:/github/xpackage/zlib/b/CMakeFiles/rebuild_cache.dir
-E:/github/xpackage/zlib/b/CMakeFiles/z.dir
-E:/github/xpackage/zlib/b/CMakeFiles/edit_cache.dir
