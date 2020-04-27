@@ -49,8 +49,7 @@ int main(int argc, char* argv[])
     //Log_setTraceCallback(LogtraceCallback);
 
     conn_opts.ssl = &ssl;
-    //memset(&ssl,0,sizeof(ssl));
-    ssl.verify = 0;
+        
     ssl.ssl_error_cb = onerr;    
     ssl.trustStore = "CA.cer";
     //ssl.CApath
